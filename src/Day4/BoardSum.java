@@ -13,11 +13,12 @@ public class BoardSum {
 				arr[i][j] = sc.nextInt();
 			}
 		}
-		int answer = Integer.MIN_VALUE;
+		
 		int sum = 0,sum2 = 0;
+		int answer = 0;
 		for(int i = 0; i < n; i++) {
-			sum = sum2 = 0;
 			for(int j = 0; j < n; j++) {
+				sum = sum2 = 0;
 				sum += arr[i][j];
 				sum2 += arr[j][i];
 			}
@@ -26,8 +27,8 @@ public class BoardSum {
 		}
 		sum = sum2 = 0;
 		for(int i = 0; i < n; i++) {
-			sum = arr[i][i];
-			sum2 = arr[i][n-i-1];
+			sum += arr[i][i];
+			sum2 += arr[i][n-i-1];
 		}
 		answer = Math.max(answer, sum);
 		answer = Math.max(answer, sum2);
