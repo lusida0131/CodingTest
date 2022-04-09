@@ -15,3 +15,4 @@ public class StairClimb {
 		System.out.println(arr[n - 1]);
 	}
 }
+
