@@ -40,13 +40,11 @@ public class Baek10828 {
 			else if(str.equals("pop")) {
 				if(stack.empty()) {
 					System.out.println(-1);
-				}else {
-					System.out.println(stack.pop());
 				}
-				
+				else {
+					System.out.println(stack.pop());
+				}	
 			}
-			
 		}	
 	}
-
 }
