@@ -6,32 +6,47 @@ public class Baek9012 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		Stack<Character> stack = new Stack<>();
+		
+		int [] arr = new int[n];
 		for(int i = 0; i < n; i++) {
-			String str = br.readLine();
-			int len = str.length();
-			for(int j = 0; j < len; j++) {
-				char chr = str.charAt(j);
-				if(chr == '(') {
-					stack.push(chr);               
-				}		
-				else {
-					if(stack.isEmpty()) {
-						stack.push(chr);
-						break;
-					}
-					else {
-						stack.pop();
-					}
-				}				
-			}
-			if(stack.isEmpty()) {
-				System.out.println("YES");
+			arr[i] = Integer.parseInt(br.readLine());
+		}
+		
+		Stack<Integer> stack = new Stack<>();
+		int num = 1;
+		int su = 0;
+		
+		for(int i = 0; i < n; i++) {
+			su = arr[i];
+			if(su >= num) {
+				while(su >= num) {
+					stack.push(num++);
+					System.out.println("+");
+				}
+				stack.pop();
+				System.out.println("-");
 			}
 			else {
-				System.out.println("NO");
+				int k = stack.pop();
+				if(k < su) {
+					System.out.println("no");
+					break;
+				}
+				else {
+					System.out.println("-");
+				}
 			}
-			stack.clear();
-		}	
+		}
 	}
 }
+/*
+8
+4
+3
+6
+8
+7
+5
+2
+1
+*/
