@@ -20,6 +20,7 @@ public class Baek1085 {
 		
 		int answer = Math.min(m, n);
 		System.out.println(answer);
+		br.close();
 	}
-
+	
 }

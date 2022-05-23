@@ -70,6 +70,7 @@ public class Baek10866 {
 			}
 		}
 		System.out.println(bf.toString());
+		br.close();
 	}
 
 }

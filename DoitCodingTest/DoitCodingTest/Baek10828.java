@@ -45,6 +45,7 @@ public class Baek10828 {
 					System.out.println(stack.pop());
 				}	
 			}
-		}	
+		}
+		br.close();
 	}
 }
