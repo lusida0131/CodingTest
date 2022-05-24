@@ -1,0 +1,60 @@
+package DoitCodingTest;
+import java.io.*;
+import java.util.*;
+public class Baek13023 {
+	static ArrayList<Integer> arr[];
+	static boolean visited[];
+	static boolean arrive;
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		
+		int n = Integer.parseInt(st.nextToken());
+		int m = Integer.parseInt(st.nextToken());
+		
+		arr = new ArrayList[n];
+		visited = new boolean[n];
+		arrive = false;
+		
+		for(int i = 0; i < n; i++) {
+			arr[i] = new ArrayList<>();
+		}
+		for(int i = 0; i < m; i++) {
+			st = new StringTokenizer(br.readLine());
+			int e = Integer.parseInt(st.nextToken());
+			int v = Integer.parseInt(st.nextToken());
+			
+			arr[v].add(e);
+			arr[e].add(v);
+			
+		}
+		for(int i = 0; i < n; i++) {
+			DFS(i, 1);
+			if(arrive) {
+				break;
+			}
+		}
+		if(arrive) {
+			System.out.println("1");
+		}
+		else {
+			System.out.println("0");
+		}
+	}
+	private static void DFS(int now, int depth) {
+		if(depth == 5 || arrive) {
+				arrive = true;
+			return;
+		}
+		visited[now] = true;
+		for(int k : arr[now]) {
+			if(visited[k] == false) {
+				DFS(k, depth + 1);
+			}
+		}
+		visited[now] = false;
+	}
+	
+}
