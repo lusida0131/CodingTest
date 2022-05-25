@@ -27,5 +27,4 @@ public class Baek10989 {
 		}
 		System.out.println(bf.toString());
 	}
-
 }

@@ -1,49 +1,44 @@
 package DoitCodingTest;
 import java.io.*;
 import java.util.*;
-
-public class Baek11724 {
+public class Baek2606 {
 	static ArrayList<Integer> arr[];
 	static boolean visited[];
+	static int cnt, v;
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
+		int n = Integer.parseInt(br.readLine());
+		int m = Integer.parseInt(br.readLine());
 		
 		arr = new ArrayList[n + 1];
 		visited = new boolean[n + 1];
-		for(int i = 1; i < n + 1; i++) {
+		
+		for(int i = 1; i <=n; i++) {     // 인덱스 편의상 n+1설정, 0번째 요소는 사용 X  
 			arr[i] = new ArrayList<>();
 		}
-		
+		v = 1; // 탐색 시장할 정점의 번호
 		for(int i = 0; i < m; i++) {
-			st = new StringTokenizer(br.readLine());
+			StringTokenizer st = new StringTokenizer(br.readLine());
 			int e = Integer.parseInt(st.nextToken());
 			int v = Integer.parseInt(st.nextToken());
 			arr[e].add(v);
 			arr[v].add(e);
+			
 		}
-		int cnt = 0;
-		for(int i = 1; i < n + 1; i++) {
-			if(!visited[i]) {
-				cnt++;
-				DFS(i);
-			}
-		}
-		System.out.println(cnt);
+		System.out.println(DFS(v));
 	}
 
-	private static void DFS(int i) {
-		if(visited[i]) {
-			return;
-		}
+	private static int DFS(int i) {
 		visited[i] = true;
-		for(int b : arr[i])
-		if(visited[b] == false) {
-			DFS(b);
+		for(int b : arr[i]) {
+			if(visited[b] == false) {
+				cnt++;
+				DFS(b);
+			}
 		}
-	}	
+		return cnt;
+	}
+
 }
