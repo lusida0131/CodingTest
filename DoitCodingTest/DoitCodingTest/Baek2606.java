@@ -5,7 +5,6 @@ public class Baek2606 {
 	static ArrayList<Integer> arr[];
 	static boolean visited[];
 	static int cnt, v;
-	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -25,11 +24,9 @@ public class Baek2606 {
 			int v = Integer.parseInt(st.nextToken());
 			arr[e].add(v);
 			arr[v].add(e);
-			
 		}
 		System.out.println(DFS(v));
 	}
-
 	private static int DFS(int i) {
 		visited[i] = true;
 		for(int b : arr[i]) {
@@ -40,5 +37,4 @@ public class Baek2606 {
 		}
 		return cnt;
 	}
-
 }
