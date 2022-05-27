@@ -55,10 +55,8 @@ public class Baek1167 {
 					distance[e] = distance[now] + v;
 				}
 			}
-		}
-		
+		}	
 	}
-
 }
 class Edge {
 	int e;

@@ -4,7 +4,6 @@ import java.util.*;
 public class Baek1260 {
 	static ArrayList<Integer> arr[];
 	static boolean visited[];
-	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -34,7 +33,6 @@ public class Baek1260 {
 		visited = new boolean[n + 1];
 		BFS(v);
 	}
-
 	private static void BFS(int i) {
 		Queue<Integer> que = new LinkedList<>();
 		que.add(i);
@@ -51,7 +49,6 @@ public class Baek1260 {
 			}
 		}
 	}
-
 	private static void DFS(int i) {
 		System.out.print(i + " ");
 		visited[i] = true;
