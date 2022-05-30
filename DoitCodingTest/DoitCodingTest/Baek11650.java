@@ -21,7 +21,7 @@ public class Baek11650 {
 		}
 	}
 }
-//class Point implements Comparable<Point> {
+class Point implements Comparable<Point> {
 	int x;
 	int y;
 	Point(int x, int y) {
