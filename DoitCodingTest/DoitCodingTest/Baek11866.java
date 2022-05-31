@@ -11,26 +11,24 @@ public class Baek11866 {
 		int m = Integer.parseInt(st.nextToken());
 		
 		Queue<Integer> que = new LinkedList<>();
-		Queue<Integer> list = new LinkedList<>();
+		LinkedList<Integer> list = new LinkedList<>();
 		
 		for(int i = 1; i <= n; i++) {
-			que.add(i);
+			que.offer(i);
 		}
 		int cnt = 0;
-		int cc = 0;
-		while(m != cnt) {
-			if(cc % m == 0) {
-				list.add(que.poll());
-				cc++;
-				
+		String str = "<";
+		while(!que.isEmpty()) {
+			cnt++;
+			if(cnt == m) {
+				str += que.poll() + ", ";
+				cnt = 0;
 			}
 			else {
-				que.add(que.poll());
-				cc++;
+				que.offer(que.poll());
 			}
-			cnt++;
 		}
-		System.out.println(list);
+		str = str.substring(0, str.length() - 2);
+		System.out.print(str + ">");
 	}
-
 }
