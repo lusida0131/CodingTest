@@ -11,7 +11,6 @@ public class Baek11866 {
 		int m = Integer.parseInt(st.nextToken());
 		
 		Queue<Integer> que = new LinkedList<>();
-		LinkedList<Integer> list = new LinkedList<>();
 		
 		for(int i = 1; i <= n; i++) {
 			que.offer(i);
