@@ -14,17 +14,14 @@ public class Baek10815 {
 		Arrays.sort(arr);
 		int m = Integer.parseInt(br.readLine());
 		st = new StringTokenizer(br.readLine());
-		
 		for(int i = 0; i < m; i++) {
 			int look = Integer.parseInt(st.nextToken());
 			int start = 0;
 			int end = arr.length - 1;
 			boolean result = false;
-			
 			while(start <= end) {
 				int mid = (start + end) / 2;
 				int midV = arr[mid];
-				
 				if(midV < look) {
 					start = mid + 1;
 				}
