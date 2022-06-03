@@ -14,7 +14,6 @@ public class Baek11047 {
 		for(int i = 0; i < n; i++) {
 			arr[i] = Integer.parseInt(br.readLine());
 		}
-		
 		int div = 0;
 		int cnt = 0;
 		int max = 0;

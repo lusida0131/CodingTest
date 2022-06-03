@@ -7,8 +7,9 @@ public class Baek1931 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
 		ArrayList<Meet> list = new ArrayList<>();
+		
 		for(int i = 0; i < n; i++) {
-			StringTokenizer st = new StringTokenizer(br.readLine());
+			StringTokenizer st = new StringTokenizer(br.readLine());	
 			int x = Integer.parseInt(st.nextToken());
 			int y = Integer.parseInt(st.nextToken());
 			list.add(new Meet(x, y));
@@ -17,27 +18,26 @@ public class Baek1931 {
 		Collections.sort(list);
 		int et = 0;
 		for(Meet b : list) {
-			if(b.s >= et) {
+			if(b.x > et) {
 				cnt++;
-				et = b.e;
+				et = b.y;
 			}
 		}
 		System.out.println(cnt);
 	}
 }
 class Meet implements Comparable<Meet> {
-	int s, e;
-	Meet(int s, int e) {
-		this.s = s;
-		this.e = e;
+	int x;
+	int y;
+	Meet(int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
 	@Override
 	public int compareTo(Meet o) {
-		if(this.e == o.e) {
-			return this.s - o.s;
+		if(this.x == o.x) {
+			return this.y - o.y;
 		}
-		else {
-			return this.e - o.e;
-		}
+		return this.x - o.x;
 	}
 }
