@@ -1,9 +1,7 @@
 package DoitCodingTest;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Baek1152 {
 
@@ -16,5 +14,4 @@ public class Baek1152 {
 		System.out.println(st.countTokens());
 
 	}
-
 }
