@@ -35,6 +35,7 @@ public class Baek1976 {
 				}
 			}
 		}
+		// 여행 계획 도시들이 1개의 대표 도시로 연결돼 있는지 확인하기 
 		int index = find(route[1]);
 		for(int i = 2; i < route.length; i++) {
 			if(index != find(route[i])) {
