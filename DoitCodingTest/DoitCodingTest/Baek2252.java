@@ -11,11 +11,10 @@ public class Baek2252 {
 		int m = Integer.parseInt(st.nextToken());
 		
 		ArrayList<ArrayList<Integer>> list = new ArrayList<>();
-		
 		for(int i = 0; i <= n; i++) {
 			list.add(new ArrayList<>());
 		}
-		int [] insert = new int [n + 1];
+		int insert[] = new int[n + 1];
 		for(int i = 0; i < m; i++) {
 			st = new StringTokenizer(br.readLine());
 			int s = Integer.parseInt(st.nextToken());
@@ -31,8 +30,8 @@ public class Baek2252 {
 		}
 		while(!que.isEmpty()) {
 			int now = que.poll();
-			System.out.print(now + " ");
-			for(int next : list.get(now) ) {
+			System.out.println(now );
+			for(int next : list.get(now)) {
 				insert[next]--;
 				if(insert[next] == 0) {
 					que.offer(next);
