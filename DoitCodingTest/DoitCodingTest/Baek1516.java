@@ -43,5 +43,4 @@ public class Baek1516 {
 			System.out.println(result[i] + selfBuild[i]);
 		}
 	}
-
 }

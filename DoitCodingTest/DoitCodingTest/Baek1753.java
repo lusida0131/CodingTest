@@ -18,6 +18,7 @@ public class Baek1753 {
 		int m = Integer.parseInt(st.nextToken());
 		
 		int k = Integer.parseInt(br.readLine());
+		
 		distance = new int[n + 1];
 		list = new ArrayList[n + 1];
 		visit = new boolean[n + 1];
