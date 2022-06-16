@@ -7,10 +7,8 @@ public class Baek1916 {
 	static ArrayList<Node>[] list;
 	static boolean[] visit;
 	static int[] distance;
-	
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st;
 		
 		n = Integer.parseInt(br.readLine());
@@ -62,7 +60,6 @@ public class Baek1916 {
 		}
 		return distance[end];
 	}
-
 }
 class Node implements Comparable<Node>{
 	int vertex;
