@@ -31,5 +31,4 @@ public class Baek11403 {
 			System.out.println();
 		}
 	}
-
 }
