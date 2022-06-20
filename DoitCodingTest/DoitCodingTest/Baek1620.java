@@ -27,12 +27,10 @@ public class Baek1620 {
 			}
 			else {
 				sb.append(map.get(str) + "\n");
-			
 			}
 		}
 		System.out.println(sb.toString());
 	}
-
 	private static boolean isInteger() {
 		for(int j = 0; j < str.length(); j++) {
 			if(Character.isDigit(str.charAt(j))) {
