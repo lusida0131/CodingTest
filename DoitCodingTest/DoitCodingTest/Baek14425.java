@@ -47,5 +47,5 @@ public class Baek14425 {
 }
 class dNode {
 	dNode[] next = new dNode[26];
-	boolean isEnd;
+	boolean isEnd;  // 문자 열 
 }
