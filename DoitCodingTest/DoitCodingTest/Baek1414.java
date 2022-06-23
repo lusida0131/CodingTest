@@ -2,9 +2,9 @@ package DoitCodingTest;
 import java.io.*;
 import java.util.*;
 public class Baek1414 {
-	static int n,sum;
-	static int[] parent;
+	static int n, sum;
 	static PriorityQueue<lEdge> que;
+	static int[] parent;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		n = Integer.parseInt(br.readLine());
@@ -21,7 +21,7 @@ public class Baek1414 {
 				else if(tmpc[j] >= 'A' && tmpc[j] <= 'Z') {
 					tmp = tmpc[j] - 'A' + 27;
 				}
-				sum = sum + tmp; // 총 랜선의 길이 저장하기 
+				sum = sum + tmp;
 				if(i != j && tmp != 0) {
 					que.add(new lEdge(i, j, tmp));
 				}
@@ -33,9 +33,9 @@ public class Baek1414 {
 		}
 		int useEdge = 0;
 		int result = 0;
-		while(!que.isEmpty()) { // 최소 신장 트리 알고리즘 수행하기 
+		while(!que.isEmpty()) {
 			lEdge now = que.poll();
-			if(find(now.s) != find(now.e)) { // 같은 부모가 아니라면 연결 할 수 있음 
+			if(find(now.s) != find(now.e)) {
 				union(now.s, now.e);
 				result = result + now.v;
 				useEdge++;
@@ -64,7 +64,7 @@ public class Baek1414 {
 		}
 	}
 }
-class lEdge implements Comparable<lEdge>{
+class lEdge implements Comparable<lEdge> {
 	int s;
 	int e;
 	int v;
@@ -77,4 +77,5 @@ class lEdge implements Comparable<lEdge>{
 	public int compareTo(lEdge o) {
 		return this.v - o.v;
 	}
+	
 }

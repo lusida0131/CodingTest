@@ -2,16 +2,16 @@ package DoitCodingTest;
 import java.io.*;
 import java.util.*;
 public class Baek1197 {
-	static PriorityQueue<pEdge> que;
 	static int[] parent;
+	static PriorityQueue<pEdge> que;
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
-		parent = new int[n + 1];
 		que = new PriorityQueue<>();
+		parent = new int[n + 1];
 		for(int i = 0; i < n; i++) {
 			parent[i] = i;
 		}
@@ -24,9 +24,10 @@ public class Baek1197 {
 		}
 		int useEdge = 0;
 		int result = 0;
-		while(useEdge < n - 1) {
+		
+		while(useEdge != n - 1) {
 			pEdge now = que.poll();
-			if(find(now.a) != find(now.b)) {   // 같은 부모가 아니라면 연결해도 사이클이 생기지 않음 
+			if(find(now.a) != find(now.b)) {
 				union(now.a, now.b);
 				result = result + now.c;
 				useEdge++;
@@ -39,7 +40,8 @@ public class Baek1197 {
 		b = find(b);
 		if(a != b) {
 			parent[b] = a;
-		}
+ 		}
+		
 	}
 	private static int find(int a) {
 		if(a == parent[a]) {
@@ -63,4 +65,5 @@ class pEdge implements Comparable<pEdge>{
 	public int compareTo(pEdge o) {
 		return this.c - o.c;
 	}
+	
 }
