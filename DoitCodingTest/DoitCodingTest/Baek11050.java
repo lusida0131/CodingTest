@@ -9,7 +9,7 @@ public class Baek11050 {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(st.nextToken());
 		int[][] arr = new int[n + 1][n + 1];
 		for(int i = 0; i <= n; i++) {
 			arr[i][0] = 1; // i 개에서 1개도 선택하지 않는 경우의 수는 0개 
@@ -21,6 +21,6 @@ public class Baek11050 {
 				arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j]; // 조합 점화식 
 			}
 		}
-		System.out.println(arr[n][m]);
+		System.out.println(arr[n][k]);
 	}
 }

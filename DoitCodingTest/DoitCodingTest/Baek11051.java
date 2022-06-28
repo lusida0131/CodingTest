@@ -9,7 +9,7 @@ public class Baek11051 {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(st.nextToken());
 		int[][] arr = new int[n + 1][n + 1];
 		int pow = 10007;
 		for(int i = 0; i <= n; i++) {
@@ -22,7 +22,6 @@ public class Baek11051 {
 				arr[i][j] = (arr[i - 1][j - 1] + arr[i -1][j]) % pow;
 			}
 		}
-		System.out.println(arr[n][m]);
+		System.out.println(arr[n][k]);
 	}
-
 }
