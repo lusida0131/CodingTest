@@ -8,6 +8,6 @@
 	<classpathentry kind="src" path="BaekJoon"/>
 	<classpathentry kind="src" path="InfrearnCodingStudy"/>
 	<classpathentry kind="src" path="DoitCodingTest"/>
-	<classpathentry kind="src" path="GitBaek"/>
+	<classpathentry kind="src" path="Programmers"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
