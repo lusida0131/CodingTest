@@ -15,7 +15,7 @@ public class step1_3 {
             sum += budgets[i];
         }
         int max = 0;
-        if(sum > M) {
+        if(sum >= M) {
         	int start = budgets[0];
             int end = budgets[budgets.length - 1];
             sum = 0;
@@ -37,7 +37,6 @@ public class step1_3 {
                 else {
                 	start = midv + 1;
                 	answer = midv;
-               
                 }  
             }
         }
