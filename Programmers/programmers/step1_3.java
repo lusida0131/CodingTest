@@ -14,7 +14,6 @@ public class step1_3 {
         for(int i = 0; i < budgets.length; i++) {
             sum += budgets[i];
         }
-        int max = 0;
         if(sum >= M) {
         	int start = budgets[0];
             int end = budgets[budgets.length - 1];
