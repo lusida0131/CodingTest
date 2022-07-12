@@ -3,6 +3,7 @@ import java.util.*;
 public class step1_4 {
 
 	public static void main(String[] args) {
+		
 		int[] A = {1, 3, 5, 7};
 		int[] B = {2, 2, 6, 8};
         Arrays.sort(A);

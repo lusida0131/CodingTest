@@ -12,12 +12,7 @@ public class step1_2 {
 	        for(int i = 0; i < numbers.length; i++) {
 	            str[i] = String.valueOf(numbers[i]);
 	        }
-	        Arrays.sort(str, new Comparator<String>() {
-	            @Override
-	            public int compare(String a, String b) {
-	                return (b + a).compareTo(a + b);
-	            }
-	        });
+	        Arrays.sort(str, (a, b) -> (b + a).compareTo(a + b));
 	        
 	        if(str[0].equals("0")) {
 	            System.out.println( "0");
