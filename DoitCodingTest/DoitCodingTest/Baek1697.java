@@ -18,7 +18,6 @@ public class Baek1697 {
 	}
 	private static int BFS() {
 		arr = new int[100001];
-		
 		que.add(n);
 		arr[n] = 1;
 		while(!que.isEmpty()) {
