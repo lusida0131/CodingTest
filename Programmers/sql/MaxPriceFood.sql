@@ -1,0 +1,4 @@
+-- 코드를 입력하세요
+SELECT a.PRODUCT_ID, a.PRODUCT_NAME, a.PRODUCT_CD, a.CATEGORY, a.PRICE
+from FOOD_PRODUCT a, (select max(PRICE) as "PRICE" from FOOD_PRODUCT) b
+where a.PRICE = b.PRICE
